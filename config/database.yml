@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: rorst
+  username: "ror"
+  password: 'qwerty'
+
+test:
+  <<: *default
+  database: rorst
+  username: "ror"
+  password: "qwerty"
+
+production:
+  <<: *default
+  database: rorst
+  username: "ror"
+  password: "qwerty"
+#  password: <%#= ENV["RORSTART_DATABASE_PASSWORD"] %>
